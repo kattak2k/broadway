@@ -10,13 +10,15 @@ class PlaysController < ApplicationController
 
     def new
         #@play = Play.new
-        @play = current_user.play.build
+        @play = current_user.plays.build
+        #listing all the categories by the names and ids and we need a array of values for dropdown in view
+        @categories = Category.all.map{|c| [c.name,c.id]  }
     end
 
     def create
         #@play = Play.new(play_params)
-        @play = current_user.play.build(play_params)
-
+        @play = current_user.plays.build(play_params)
+        @play.category_id = params[:category_id]
         if @play.save
             redirect_to root_path
         else
@@ -25,10 +27,12 @@ class PlaysController < ApplicationController
     end
 
     def edit
-        
+      @categories = category.all.map{|c| [c.name,c.id]  }  
     end
 
     def update
+        @play.category_id = params[:category_id]
+
         if @play.update(play_params)
    # displaying show page         
          redirect_to play_path(@play)
@@ -46,7 +50,7 @@ class PlaysController < ApplicationController
 private
 
     def play_params
-     params.require(:play).permit(:title, :description, :director)
+     params.require(:play).permit(:title, :description, :director, :category_id)
     end    
 
     def find_play
