@@ -4,10 +4,18 @@
 
 <% if @plays.count == 0 %>
     <h1> There are no plays in this category</h1>
-    <% else %>
+<% else %>
+    <div class="row">
         <% @plays.each do |play| %>
-            <h2>
-                <%= link_to  play.title, play_path(play) %>
-            </h2>
-            <% end %>
-                <% end %>
+            <div class="col-md-3"> 
+               <!-- http://localhost:3000/play/1-->
+                <a href="/plays/<%= play.id%>"> 
+                <!-- here play_index is the size we maintained in play model-->
+                <%= image_tag play.play_img.url(:play_index), class: "play" %>
+                </a>
+            </div>
+            
+            <!--<h2><%= link_to  play.title, play_path(play) %></h2>-->
+        <% end %>
+    </div>
+<% end %>
