@@ -52,6 +52,10 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
+# Ins +RK01  
   # Ensure you have defined default url options in your environments files.   
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  #Config for paper clip
+  Paperclip.options[:command_path] = "/usr/local/bin/" 
+# Ins -RK01
 end
