@@ -1,23 +1,22 @@
-# README
+# Broadway App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ The following app provides information of the movies and a User will be able to review the movie and give comments on it.
 
 Things you may want to cover:
 
-* Ruby version
-  -rails 5.0.2  
-  -ruby 2.3.3
-* System dependencies
+* Ruby versions
+  1.rails 5.0.2  
+  2.ruby 2.3.3
 
-* Configuration
-   1. Paperclip
+
+* Configuration and info
+   1.Paperclip
         - add config In development mode, you might add this line to config/environments/development.rb):
         ```Paperclip.options[:command_path] = "/usr/local/bin/"```
         - generator: adds migration file
         ```rails generate paperclip Play play_img```
         
-   2. Star reviews -->  Jquery Raty     
+   2.Star reviews -->  Jquery Raty     
 
 * Output images
    1.Index page
