@@ -5,11 +5,12 @@
 Things you may want to cover:
 
 * Ruby versions
+
   1.rails 5.0.2  
   2.ruby 2.3.3
 
-
 * Configuration and info
+
    1.Paperclip
         - add config In development mode, you might add this line to config/environments/development.rb):
         ```Paperclip.options[:command_path] = "/usr/local/bin/"```
